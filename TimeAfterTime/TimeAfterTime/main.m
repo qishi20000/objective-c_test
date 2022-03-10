@@ -9,11 +9,15 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSDate *now = [NSDate date];
+        //NSDate *now = [NSDate date];
+        NSDate* now = [[NSDate alloc] init];
         NSLog(@"This NSDate object lives at %p",now);
         NSLog(@"The date is %@",now);
         double seconds = [now timeIntervalSince1970];
         NSLog(@"It has been %f seconds since the start of 1979.",seconds);
+        
+        double seconds2 = [[NSDate date] timeIntervalSince1970];
+        NSLog(@"It has been %f seconds since the start of 1979.",seconds2);
         
         NSDate *later = [now dateByAddingTimeInterval:1000000];
         NSLog(@"In 100000 seconds it will be %@.",later);
